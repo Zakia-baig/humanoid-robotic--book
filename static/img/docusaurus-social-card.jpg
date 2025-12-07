@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#25c2a0"/>
+  <rect x="50" y="50" width="1100" height="530" fill="#ffffff" rx="20"/>
+
+  <text x="600" y="200" text-anchor="middle" font-family="Arial" font-size="48" fill="#25c2a0" font-weight="bold">
+    Humanoid Robotics Book
+  </text>
+
+  <text x="600" y="280" text-anchor="middle" font-family="Arial" font-size="24" fill="#333">
+    Comprehensive Guide to Humanoid Robotics, Physical AI, ROS2, Gazebo, Isaac, VLA
+  </text>
+
+  <!-- Simple humanoid robot icon -->
+  <g transform="translate(600, 400)">
+    <circle cx="0" cy="-40" r="15" fill="#25c2a0"/> <!-- Head -->
+    <rect x="-15" y="-25" width="30" height="40" fill="#25c2a0"/> <!-- Torso -->
+    <line x1="-25" y1="-15" x2="-40" y2="0" stroke="#25c2a0" stroke-width="5"/> <!-- Left arm -->
+    <line x1="25" y1="-15" x2="40" y2="0" stroke="#25c2a0" stroke-width="5"/> <!-- Right arm -->
+    <line x1="-10" y1="15" x2="-10" y2="50" stroke="#25c2a0" stroke-width="5"/> <!-- Left leg -->
+    <line x1="10" y1="15" x2="10" y2="50" stroke="#25c2a0" stroke-width="5"/> <!-- Right leg -->
+  </g>
+
+  <text x="600" y="550" text-anchor="middle" font-family="Arial" font-size="20" fill="#666">
+    By Zakia Baig | Complete 13-Chapter Guide
+  </text>
+</svg>

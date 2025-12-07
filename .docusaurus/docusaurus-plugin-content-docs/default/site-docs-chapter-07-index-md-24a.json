@@ -1,0 +1,29 @@
+{
+  "id": "chapter-07/index",
+  "title": "Chapter 7 - Locomotion and Movement Control",
+  "description": "Understanding locomotion systems and movement control in humanoid robotics",
+  "source": "@site/docs/chapter-07/index.md",
+  "sourceDirName": "chapter-07",
+  "slug": "/chapter-07/",
+  "permalink": "/docs/chapter-07/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/chapter-07/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "title": "Chapter 7 - Locomotion and Movement Control",
+    "sidebar_position": 7,
+    "description": "Understanding locomotion systems and movement control in humanoid robotics"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Chapter 6 - Vision Language Action (VLA) Models",
+    "permalink": "/docs/chapter-06/"
+  },
+  "next": {
+    "title": "Chapter 8 - Perception Systems",
+    "permalink": "/docs/chapter-08/"
+  }
+}

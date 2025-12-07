@@ -1,0 +1,106 @@
+/**
+ * Copyright (c) 2017-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.navigation {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-global-radius);
+  background-color: var(--ifm-menu-background-color);
+}
+
+.navContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.navSection {
+  flex: 1;
+}
+
+.navTitle {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  font-weight: var(--ifm-font-weight-bold);
+  color: var(--ifm-heading-color);
+}
+
+.chapterList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chapterItem {
+  margin: 0.25rem 0;
+  padding: 0;
+}
+
+.chapterItem a {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  border-radius: var(--ifm-global-radius);
+  transition: all var(--ifm-transition-fast) ease;
+}
+
+.chapterItem a:hover {
+  background-color: var(--ifm-menu-color-background-hover);
+  text-decoration: none;
+}
+
+.currentChapter a {
+  background-color: var(--ifm-menu-color-background-active);
+  color: var(--ifm-color-primary);
+  font-weight: var(--ifm-font-weight-bold);
+}
+
+.chapterNumber {
+  display: inline-block;
+  min-width: 2rem;
+  margin-right: 0.5rem;
+  color: var(--ifm-color-emphasis-500);
+  font-weight: var(--ifm-font-weight-bold);
+}
+
+.chapterTitle {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.navButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.navButton {
+  flex: 1;
+  text-align: center;
+  min-width: 120px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navContainer {
+    gap: 1rem;
+  }
+
+  .navButtons {
+    flex-direction: column;
+  }
+
+  .navButton {
+    margin: 0;
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "chapter-12/index",
+  "title": "Chapter 12 - AI and Learning in Humanoid Robots",
+  "description": "Understanding artificial intelligence and learning systems in humanoid robotics for adaptive behavior and intelligence",
+  "source": "@site/docs/chapter-12/index.md",
+  "sourceDirName": "chapter-12",
+  "slug": "/chapter-12/",
+  "permalink": "/docs/chapter-12/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/chapter-12/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 12,
+  "frontMatter": {
+    "title": "Chapter 12 - AI and Learning in Humanoid Robots",
+    "sidebar_position": 12,
+    "description": "Understanding artificial intelligence and learning systems in humanoid robotics for adaptive behavior and intelligence"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Chapter 11 - Control Systems and Planning",
+    "permalink": "/docs/chapter-11/"
+  },
+  "next": {
+    "title": "Chapter 13 - Future Directions and Applications",
+    "permalink": "/docs/chapter-13/"
+  }
+}

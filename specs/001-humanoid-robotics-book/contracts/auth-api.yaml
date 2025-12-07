@@ -1,0 +1,236 @@
+openapi: 3.0.0
+info:
+  title: Humanoid Robotics Book - Authentication API
+  version: 1.0.0
+  description: API for user authentication and profile management
+
+paths:
+  /api/auth/signup:
+    post:
+      summary: User registration with background questions
+      description: Register a new user and collect background information
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+                - name
+                - roboticsExperience
+                - learningGoals
+              properties:
+                email:
+                  type: string
+                  format: email
+                  description: User's email address
+                password:
+                  type: string
+                  format: password
+                  description: User's password
+                name:
+                  type: string
+                  description: User's full name
+                roboticsExperience:
+                  type: string
+                  enum: [beginner, intermediate, advanced, expert]
+                  description: User's experience level in robotics
+                learningGoals:
+                  type: string
+                  description: User's learning objectives
+                technicalBackground:
+                  type: string
+                  description: User's technical background
+                interests:
+                  type: array
+                  items:
+                    type: string
+                    description: Specific interests in robotics topics
+      responses:
+        '201':
+          description: User successfully registered
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  user:
+                    $ref: '#/components/schemas/User'
+                  message:
+                    type: string
+                    example: "User registered successfully"
+        '400':
+          description: Invalid input data
+        '409':
+          description: User with email already exists
+
+  /api/auth/signin:
+    post:
+      summary: User login
+      description: Authenticate user and return session token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                  format: password
+      responses:
+        '200':
+          description: User successfully authenticated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  user:
+                    $ref: '#/components/schemas/User'
+                  token:
+                    type: string
+                    description: Authentication token
+                  message:
+                    type: string
+                    example: "Login successful"
+        '401':
+          description: Invalid credentials
+
+  /api/auth/profile:
+    get:
+      summary: Get user profile
+      description: Retrieve current user's profile information
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: User profile retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  profile:
+                    $ref: '#/components/schemas/UserProfile'
+    put:
+      summary: Update user profile
+      description: Update user's profile information including background data
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserProfileUpdate'
+      responses:
+        '200':
+          description: Profile updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  profile:
+                    $ref: '#/components/schemas/UserProfile'
+                  message:
+                    type: string
+                    example: "Profile updated successfully"
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        email:
+          type: string
+          format: email
+        name:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    UserProfile:
+      allOf:
+        - $ref: '#/components/schemas/User'
+        - type: object
+          properties:
+            roboticsExperience:
+              type: string
+              enum: [beginner, intermediate, advanced, expert]
+            learningGoals:
+              type: string
+            technicalBackground:
+              type: string
+            interests:
+              type: array
+              items:
+                type: string
+            personalizationSettings:
+              $ref: '#/components/schemas/PersonalizationSettings'
+
+    UserProfileUpdate:
+      type: object
+      properties:
+        roboticsExperience:
+          type: string
+          enum: [beginner, intermediate, advanced, expert]
+        learningGoals:
+          type: string
+        technicalBackground:
+          type: string
+        interests:
+          type: array
+          items:
+            type: string
+        personalizationSettings:
+          $ref: '#/components/schemas/PersonalizationSettings'
+
+    PersonalizationSettings:
+      type: object
+      properties:
+        difficultyPreference:
+          type: string
+          enum: [basic, intermediate, advanced]
+        topicPreferences:
+          type: array
+          items:
+            type: string
+        contentFormatPreference:
+          type: string
+          enum: [text, visual, interactive]
+        readingSpeed:
+          type: string
+          enum: [slow, normal, fast]

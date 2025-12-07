@@ -1,0 +1,29 @@
+{
+  "id": "chapter-04/index",
+  "title": "Chapter 4 - Gazebo Simulation Environment",
+  "description": "Understanding the Gazebo robotics simulation framework and its application in humanoid robotics",
+  "source": "@site/docs/chapter-04/index.md",
+  "sourceDirName": "chapter-04",
+  "slug": "/chapter-04/",
+  "permalink": "/docs/chapter-04/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/chapter-04/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "Chapter 4 - Gazebo Simulation Environment",
+    "sidebar_position": 4,
+    "description": "Understanding the Gazebo robotics simulation framework and its application in humanoid robotics"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Chapter 3 - ROS2 for Humanoid Robots",
+    "permalink": "/docs/chapter-03/"
+  },
+  "next": {
+    "title": "Chapter 5 - Isaac Robotics Platform",
+    "permalink": "/docs/chapter-05/"
+  }
+}

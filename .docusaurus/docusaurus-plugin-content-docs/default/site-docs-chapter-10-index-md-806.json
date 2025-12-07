@@ -1,0 +1,29 @@
+{
+  "id": "chapter-10/index",
+  "title": "Chapter 10 - Human-Robot Interaction",
+  "description": "Understanding human-robot interaction principles and technologies in humanoid robotics",
+  "source": "@site/docs/chapter-10/index.md",
+  "sourceDirName": "chapter-10",
+  "slug": "/chapter-10/",
+  "permalink": "/docs/chapter-10/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/chapter-10/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 10,
+  "frontMatter": {
+    "title": "Chapter 10 - Human-Robot Interaction",
+    "sidebar_position": 10,
+    "description": "Understanding human-robot interaction principles and technologies in humanoid robotics"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Chapter 9 - Manipulation and Grasping",
+    "permalink": "/docs/chapter-09/"
+  },
+  "next": {
+    "title": "Chapter 11 - Control Systems and Planning",
+    "permalink": "/docs/chapter-11/"
+  }
+}

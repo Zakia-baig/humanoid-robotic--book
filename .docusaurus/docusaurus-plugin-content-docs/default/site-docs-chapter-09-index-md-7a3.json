@@ -1,0 +1,29 @@
+{
+  "id": "chapter-09/index",
+  "title": "Chapter 9 - Manipulation and Grasping",
+  "description": "Understanding manipulation and grasping systems in humanoid robotics for object interaction",
+  "source": "@site/docs/chapter-09/index.md",
+  "sourceDirName": "chapter-09",
+  "slug": "/chapter-09/",
+  "permalink": "/docs/chapter-09/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/chapter-09/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 9,
+  "frontMatter": {
+    "title": "Chapter 9 - Manipulation and Grasping",
+    "sidebar_position": 9,
+    "description": "Understanding manipulation and grasping systems in humanoid robotics for object interaction"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Chapter 8 - Perception Systems",
+    "permalink": "/docs/chapter-08/"
+  },
+  "next": {
+    "title": "Chapter 10 - Human-Robot Interaction",
+    "permalink": "/docs/chapter-10/"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "chapter-02/index",
+  "title": "Chapter 2 - Physical AI Fundamentals",
+  "description": "Understanding the principles of physical AI and its role in humanoid robotics",
+  "source": "@site/docs/chapter-02/index.md",
+  "sourceDirName": "chapter-02",
+  "slug": "/chapter-02/",
+  "permalink": "/docs/chapter-02/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/chapter-02/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Chapter 2 - Physical AI Fundamentals",
+    "sidebar_position": 2,
+    "description": "Understanding the principles of physical AI and its role in humanoid robotics"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Chapter 1 - Introduction to Humanoid Robotics",
+    "permalink": "/docs/chapter-01/"
+  },
+  "next": {
+    "title": "Chapter 3 - ROS2 for Humanoid Robots",
+    "permalink": "/docs/chapter-03/"
+  }
+}

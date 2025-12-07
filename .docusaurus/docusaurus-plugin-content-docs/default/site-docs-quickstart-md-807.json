@@ -1,0 +1,25 @@
+{
+  "id": "quickstart",
+  "title": "Quick Start Guide",
+  "description": "Get started with the Humanoid Robotics Book - installation, setup, and first steps",
+  "source": "@site/docs/quickstart.md",
+  "sourceDirName": ".",
+  "slug": "/quickstart",
+  "permalink": "/docs/quickstart",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/quickstart.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Quick Start Guide",
+    "sidebar_position": 1,
+    "description": "Get started with the Humanoid Robotics Book - installation, setup, and first steps"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Content Authoring Guidelines",
+    "permalink": "/docs/contributing/authoring-guidelines"
+  }
+}

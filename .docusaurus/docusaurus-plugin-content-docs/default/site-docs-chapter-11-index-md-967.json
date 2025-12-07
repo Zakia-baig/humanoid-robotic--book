@@ -1,0 +1,29 @@
+{
+  "id": "chapter-11/index",
+  "title": "Chapter 11 - Control Systems and Planning",
+  "description": "Understanding control systems and planning algorithms in humanoid robotics for coordinated motion and behavior",
+  "source": "@site/docs/chapter-11/index.md",
+  "sourceDirName": "chapter-11",
+  "slug": "/chapter-11/",
+  "permalink": "/docs/chapter-11/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/chapter-11/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 11,
+  "frontMatter": {
+    "title": "Chapter 11 - Control Systems and Planning",
+    "sidebar_position": 11,
+    "description": "Understanding control systems and planning algorithms in humanoid robotics for coordinated motion and behavior"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Chapter 10 - Human-Robot Interaction",
+    "permalink": "/docs/chapter-10/"
+  },
+  "next": {
+    "title": "Chapter 12 - AI and Learning in Humanoid Robots",
+    "permalink": "/docs/chapter-12/"
+  }
+}

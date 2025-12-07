@@ -1,0 +1,29 @@
+{
+  "id": "chapter-13/index",
+  "title": "Chapter 13 - Future Directions and Applications",
+  "description": "Exploring future trends, emerging applications, and research directions in humanoid robotics",
+  "source": "@site/docs/chapter-13/index.md",
+  "sourceDirName": "chapter-13",
+  "slug": "/chapter-13/",
+  "permalink": "/docs/chapter-13/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/chapter-13/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 13,
+  "frontMatter": {
+    "title": "Chapter 13 - Future Directions and Applications",
+    "sidebar_position": 13,
+    "description": "Exploring future trends, emerging applications, and research directions in humanoid robotics"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Chapter 12 - AI and Learning in Humanoid Robots",
+    "permalink": "/docs/chapter-12/"
+  },
+  "next": {
+    "title": "Content Management Guide",
+    "permalink": "/docs/contributing/content-management"
+  }
+}

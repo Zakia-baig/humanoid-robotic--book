@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-chapter-06/index" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Chapter 6 - Vision Language Action (VLA) Models | Humanoid Robotics Book</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://your-docusaurus-site.example.com/docs/chapter-06/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="ur"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Chapter 6 - Vision Language Action (VLA) Models | Humanoid Robotics Book"><meta data-rh="true" name="description" content="Understanding Vision Language Action models and their application in humanoid robotics"><meta data-rh="true" property="og:description" content="Understanding Vision Language Action models and their application in humanoid robotics"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://your-docusaurus-site.example.com/docs/chapter-06/"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/chapter-06/" hreflang="en"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/ur/docs/chapter-06/" hreflang="ur"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/chapter-06/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Chapter 6 - Vision Language Action (VLA) Models","item":"https://your-docusaurus-site.example.com/docs/chapter-06/"}]}</script><link rel="stylesheet" href="/assets/css/styles.a3538064.css">
+<script src="/assets/js/runtime~main.e172c94d.js" defer="defer"></script>
+<script src="/assets/js/main.7d040862.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Robotics Book Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="Robotics Book Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Humanoid Robotics Book</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/intro">Chapters</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>English</a><ul class="dropdown__menu"><li><a href="/docs/chapter-06/" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="en">English</a></li><li><a href="/ur/docs/chapter-06/" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="ur">اردو</a></li></ul></div><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/intro"><span title="Humanoid Robotics Book" class="categoryLinkLabel_W154">Humanoid Robotics Book</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/intro"><span title="Introduction" class="linkLabel_WmDU">Introduction</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-01/"><span title="Chapter 1 - Introduction to Humanoid Robotics" class="categoryLinkLabel_W154">Chapter 1 - Introduction to Humanoid Robotics</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-02/"><span title="Chapter 2 - Physical AI Fundamentals" class="categoryLinkLabel_W154">Chapter 2 - Physical AI Fundamentals</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-03/"><span title="Chapter 3 - ROS2 for Humanoid Robots" class="categoryLinkLabel_W154">Chapter 3 - ROS2 for Humanoid Robots</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-04/"><span title="Chapter 4 - Gazebo Simulation Environment" class="categoryLinkLabel_W154">Chapter 4 - Gazebo Simulation Environment</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-05/"><span title="Chapter 5 - Isaac Robotics Platform" class="categoryLinkLabel_W154">Chapter 5 - Isaac Robotics Platform</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/docs/chapter-06/"><span title="Chapter 6 - Vision Language Action (VLA) Models" class="categoryLinkLabel_W154">Chapter 6 - Vision Language Action (VLA) Models</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/chapter-06/"><span title="Chapter 6 - Vision Language Action (VLA) Models" class="linkLabel_WmDU">Chapter 6 - Vision Language Action (VLA) Models</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-07/"><span title="Chapter 7 - Locomotion and Movement Control" class="categoryLinkLabel_W154">Chapter 7 - Locomotion and Movement Control</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-08/"><span title="Chapter 8 - Perception Systems" class="categoryLinkLabel_W154">Chapter 8 - Perception Systems</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-09/"><span title="Chapter 9 - Manipulation and Grasping" class="categoryLinkLabel_W154">Chapter 9 - Manipulation and Grasping</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-10/"><span title="Chapter 10 - Human-Robot Interaction" class="categoryLinkLabel_W154">Chapter 10 - Human-Robot Interaction</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-11/"><span title="Chapter 11 - Control Systems and Planning" class="categoryLinkLabel_W154">Chapter 11 - Control Systems and Planning</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-12/"><span title="Chapter 12 - AI and Learning in Humanoid Robots" class="categoryLinkLabel_W154">Chapter 12 - AI and Learning in Humanoid Robots</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-13/"><span title="Chapter 13 - Future Directions and Applications" class="categoryLinkLabel_W154">Chapter 13 - Future Directions and Applications</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/contributing/content-management"><span title="Contributing" class="categoryLinkLabel_W154">Contributing</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/quickstart"><span title="Quick Start Guide" class="linkLabel_WmDU">Quick Start Guide</span></a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><span class="breadcrumbs__link">Humanoid Robotics Book</span></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Chapter 6 - Vision Language Action (VLA) Models</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Chapter 6 - Vision Language Action (VLA) Models</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Chapter 6: Vision Language Action (VLA) Models</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="author-zakia-baig">Author: Zakia Baig<a href="#author-zakia-baig" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h2>
+<p>Vision Language Action (VLA) models represent a breakthrough in embodied AI, combining computer vision, natural language processing, and motor control in a single neural network. These models enable humanoid robots to understand natural language commands, perceive their environment, and execute complex manipulation tasks in a coordinated manner.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction-to-vla-models">Introduction to VLA Models<a href="#introduction-to-vla-models" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<p>VLA models are a class of foundation models designed for robotic manipulation. They integrate:</p>
+<ul>
+<li class=""><strong>Vision Processing</strong>: Understanding visual input from cameras and sensors</li>
+<li class=""><strong>Language Understanding</strong>: Processing natural language commands and queries</li>
+<li class=""><strong>Action Generation</strong>: Producing motor commands to achieve desired outcomes</li>
+</ul>
+<p>This integration allows robots to perform tasks specified in natural language while adapting to their environment.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="architecture-of-vla-models">Architecture of VLA Models<a href="#architecture-of-vla-models" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="multimodal-encoder">Multimodal Encoder<a href="#multimodal-encoder" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>The vision-language encoder processes:</p>
+<ul>
+<li class=""><strong>Image Input</strong>: Raw pixel data from robot cameras</li>
+<li class=""><strong>Text Input</strong>: Natural language commands or questions</li>
+<li class=""><strong>Embedding Space</strong>: Joint representation of visual and linguistic information</li>
+<li class=""><strong>Attention Mechanisms</strong>: Focus on relevant parts of input</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="temporal-modeling">Temporal Modeling<a href="#temporal-modeling" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>VLA models incorporate temporal understanding through:</p>
+<ul>
+<li class=""><strong>Recurrent Networks</strong>: LSTM or GRU layers for sequence processing</li>
+<li class=""><strong>Transformer Architecture</strong>: Self-attention for long-range dependencies</li>
+<li class=""><strong>Memory Mechanisms</strong>: Working memory for multi-step tasks</li>
+<li class=""><strong>State Tracking</strong>: Maintaining task progress and context</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="action-decoder">Action Decoder<a href="#action-decoder" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>The action generation component produces:</p>
+<ul>
+<li class=""><strong>Motor Commands</strong>: Joint angles, velocities, or torques</li>
+<li class=""><strong>End-Effector Control</strong>: Cartesian coordinates for gripper positioning</li>
+<li class=""><strong>Temporal Sequences</strong>: Multi-step action plans</li>
+<li class=""><strong>Safety Constraints</strong>: Action limits and collision avoidance</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-vla-models">Key VLA Models<a href="#key-vla-models" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="rt-1-robotics-transformer-1">RT-1 (Robotics Transformer 1)<a href="#rt-1-robotics-transformer-1" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>RT-1 pioneered the VLA approach with:</p>
+<ul>
+<li class=""><strong>Transformer Architecture</strong>: Attention-based model for robot learning</li>
+<li class=""><strong>Language Grounding</strong>: Natural language command execution</li>
+<li class=""><strong>Generalization</strong>: Performance across unseen environments</li>
+<li class=""><strong>Dataset Scale</strong>: Large-scale demonstration dataset</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="rt-2-robotics-transformer-2">RT-2 (Robotics Transformer 2)<a href="#rt-2-robotics-transformer-2" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>RT-2 advanced the field by:</p>
+<ul>
+<li class=""><strong>Vision-Language Foundation</strong>: Pre-training on internet-scale data</li>
+<li class=""><strong>Improved Generalization</strong>: Better performance on novel tasks</li>
+<li class=""><strong>Multimodal Understanding</strong>: Enhanced vision-language integration</li>
+<li class=""><strong>Few-Shot Learning</strong>: Learning from minimal demonstrations</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="rt-x-robotics-transformer-x">RT-X (Robotics Transformer X)<a href="#rt-x-robotics-transformer-x" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>RT-X extended capabilities with:</p>
+<ul>
+<li class=""><strong>Cross-Robot Learning</strong>: Knowledge transfer across different robots</li>
+<li class=""><strong>Massive Scale</strong>: Training on data from many different robots</li>
+<li class=""><strong>General Purpose</strong>: Applicability to diverse robotic platforms</li>
+<li class=""><strong>Open Vocabulary</strong>: Understanding of new objects and concepts</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="embodied-gpt">Embodied GPT<a href="#embodied-gpt" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Embodied GPT approaches include:</p>
+<ul>
+<li class=""><strong>Large Language Models</strong>: Integration with powerful language models</li>
+<li class=""><strong>Embodiment Prior</strong>: Incorporating physical world knowledge</li>
+<li class=""><strong>Reasoning Capabilities</strong>: Complex task planning and decomposition</li>
+<li class=""><strong>Interactive Learning</strong>: Learning from human feedback</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="training-vla-models">Training VLA Models<a href="#training-vla-models" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="dataset-requirements">Dataset Requirements<a href="#dataset-requirements" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>VLA models require comprehensive datasets including:</p>
+<ul>
+<li class=""><strong>Visual Data</strong>: Images from robot cameras during task execution</li>
+<li class=""><strong>Language Annotations</strong>: Natural language descriptions of tasks</li>
+<li class=""><strong>Action Sequences</strong>: Motor commands executed during tasks</li>
+<li class=""><strong>Temporal Alignment</strong>: Synchronization between modalities</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-collection-methods">Data Collection Methods<a href="#data-collection-methods" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Human Demonstrations</strong>: Recording human actions in realistic environments</li>
+<li class=""><strong>Synthetic Data</strong>: Generating data from simulation environments</li>
+<li class=""><strong>Interactive Learning</strong>: Collecting data during robot operation</li>
+<li class=""><strong>Multi-Modal Fusion</strong>: Combining data from multiple sensors</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="training-objectives">Training Objectives<a href="#training-objectives" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Key training objectives include:</p>
+<ul>
+<li class=""><strong>Behavior Cloning</strong>: Imitating demonstrated behaviors</li>
+<li class=""><strong>Language Grounding</strong>: Connecting language to actions</li>
+<li class=""><strong>Temporal Consistency</strong>: Maintaining coherent action sequences</li>
+<li class=""><strong>Generalization</strong>: Performing well on novel tasks and environments</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="applications-in-humanoid-robotics">Applications in Humanoid Robotics<a href="#applications-in-humanoid-robotics" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="manipulation-tasks">Manipulation Tasks<a href="#manipulation-tasks" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>VLA models enable humanoid robots to:</p>
+<ul>
+<li class=""><strong>Follow Natural Language</strong>: Execute commands like &quot;pick up the red cup&quot;</li>
+<li class=""><strong>Handle Novel Objects</strong>: Manipulate objects not seen during training</li>
+<li class=""><strong>Adapt to Environment</strong>: Adjust actions based on scene context</li>
+<li class=""><strong>Multi-Step Tasks</strong>: Perform complex sequences of actions</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="human-robot-interaction">Human-Robot Interaction<a href="#human-robot-interaction" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Enhanced interaction capabilities include:</p>
+<ul>
+<li class=""><strong>Instruction Following</strong>: Understanding complex multi-step instructions</li>
+<li class=""><strong>Question Answering</strong>: Answering questions about the environment</li>
+<li class=""><strong>Collaborative Tasks</strong>: Working alongside humans in shared spaces</li>
+<li class=""><strong>Social Cues</strong>: Recognizing and responding to human gestures</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="autonomous-operation">Autonomous Operation<a href="#autonomous-operation" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>VLA models support autonomy through:</p>
+<ul>
+<li class=""><strong>Task Planning</strong>: Decomposing complex goals into subtasks</li>
+<li class=""><strong>Perception-Action Loop</strong>: Continuous perception and action execution</li>
+<li class=""><strong>Failure Recovery</strong>: Detecting and recovering from errors</li>
+<li class=""><strong>Learning from Mistakes</strong>: Improving performance over time</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="technical-implementation">Technical Implementation<a href="#technical-implementation" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="sensor-integration">Sensor Integration<a href="#sensor-integration" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>VLA models work with various sensors:</p>
+<ul>
+<li class=""><strong>RGB Cameras</strong>: Color image input for object recognition</li>
+<li class=""><strong>Depth Sensors</strong>: 3D scene understanding</li>
+<li class=""><strong>Stereo Cameras</strong>: Depth estimation and 3D reconstruction</li>
+<li class=""><strong>Thermal Cameras</strong>: Specialized sensing for specific applications</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="control-integration">Control Integration<a href="#control-integration" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Integration with robot control systems:</p>
+<ul>
+<li class=""><strong>Joint Space Control</strong>: Direct motor command generation</li>
+<li class=""><strong>Cartesian Control</strong>: End-effector position and orientation control</li>
+<li class=""><strong>Impedance Control</strong>: Compliance and force control</li>
+<li class=""><strong>Hybrid Control</strong>: Combining different control modalities</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="real-time-considerations">Real-Time Considerations<a href="#real-time-considerations" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Optimizing for real-time operation:</p>
+<ul>
+<li class=""><strong>Model Compression</strong>: Reducing model size for faster inference</li>
+<li class=""><strong>Quantization</strong>: Lower precision arithmetic for efficiency</li>
+<li class=""><strong>Caching</strong>: Storing intermediate computations</li>
+<li class=""><strong>Parallel Processing</strong>: Utilizing multiple processing units</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="challenges-and-limitations">Challenges and Limitations<a href="#challenges-and-limitations" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="computational-requirements">Computational Requirements<a href="#computational-requirements" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>VLA models demand significant computation:</p>
+<ul>
+<li class=""><strong>GPU Resources</strong>: High-performance GPUs for inference</li>
+<li class=""><strong>Memory Usage</strong>: Large models require substantial RAM</li>
+<li class=""><strong>Latency</strong>: Real-time operation requires low latency</li>
+<li class=""><strong>Power Consumption</strong>: Energy efficiency for mobile robots</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="safety-and-reliability">Safety and Reliability<a href="#safety-and-reliability" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Critical safety considerations:</p>
+<ul>
+<li class=""><strong>Fail-Safe Mechanisms</strong>: Graceful degradation when models fail</li>
+<li class=""><strong>Validation</strong>: Ensuring reliable operation in all conditions</li>
+<li class=""><strong>Robustness</strong>: Handling adversarial inputs and conditions</li>
+<li class=""><strong>Certification</strong>: Meeting safety standards for deployment</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="generalization-gap">Generalization Gap<a href="#generalization-gap" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Bridging simulation-to-reality:</p>
+<ul>
+<li class=""><strong>Domain Shift</strong>: Differences between training and deployment environments</li>
+<li class=""><strong>Distribution Shift</strong>: Novel objects and scenarios</li>
+<li class=""><strong>Embodiment Differences</strong>: Transfer across different robot platforms</li>
+<li class=""><strong>Long-Term Adaptation</strong>: Maintaining performance over time</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="comparison-with-traditional-approaches">Comparison with Traditional Approaches<a href="#comparison-with-traditional-approaches" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="classical-robotics-pipeline">Classical Robotics Pipeline<a href="#classical-robotics-pipeline" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Traditional approaches use separate modules:</p>
+<ul>
+<li class=""><strong>Modular Design</strong>: Separate perception, planning, and control</li>
+<li class=""><strong>Hand-Engineered Features</strong>: Expert-designed feature extractors</li>
+<li class=""><strong>Rule-Based Systems</strong>: Explicit rules for behavior</li>
+<li class=""><strong>Limited Adaptation</strong>: Difficult to adapt to new situations</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="vla-advantages">VLA Advantages<a href="#vla-advantages" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>VLA models offer benefits:</p>
+<ul>
+<li class=""><strong>End-to-End Learning</strong>: Joint optimization of all components</li>
+<li class=""><strong>Emergent Capabilities</strong>: Unexpected abilities from training</li>
+<li class=""><strong>Natural Interaction</strong>: Intuitive human-robot communication</li>
+<li class=""><strong>Continuous Improvement</strong>: Learning from experience</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="hybrid-approaches">Hybrid Approaches<a href="#hybrid-approaches" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Combining strengths of both:</p>
+<ul>
+<li class=""><strong>Symbolic Integration</strong>: Adding symbolic reasoning to neural networks</li>
+<li class=""><strong>Modular Neural Networks</strong>: Combining specialized neural modules</li>
+<li class=""><strong>Classical Safety</strong>: Traditional safety systems with neural control</li>
+<li class=""><strong>Verification</strong>: Formal verification of neural network components</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="future-directions">Future Directions<a href="#future-directions" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="scaling-and-efficiency">Scaling and Efficiency<a href="#scaling-and-efficiency" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Future improvements include:</p>
+<ul>
+<li class=""><strong>More Efficient Architectures</strong>: Better performance with fewer resources</li>
+<li class=""><strong>Neuromorphic Computing</strong>: Brain-inspired computing for robotics</li>
+<li class=""><strong>Edge Deployment</strong>: Running large models on robot hardware</li>
+<li class=""><strong>Continual Learning</strong>: Lifelong learning without forgetting</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="enhanced-capabilities">Enhanced Capabilities<a href="#enhanced-capabilities" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Advanced capabilities being developed:</p>
+<ul>
+<li class=""><strong>Social Intelligence</strong>: Understanding human intentions and emotions</li>
+<li class=""><strong>Creative Tasks</strong>: Performing novel creative manipulations</li>
+<li class=""><strong>Multi-Agent Coordination</strong>: Collaborative tasks with multiple robots</li>
+<li class=""><strong>Long-Horizon Planning</strong>: Extended task planning and execution</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="chapter-summary">Chapter Summary<a href="#chapter-summary" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h2>
+<p>VLA models represent a paradigm shift in robotics, enabling more natural and capable robot interaction. Understanding their architecture, training, and implementation is crucial for developing advanced humanoid robotics systems. While challenges remain, VLA models show great promise for creating more intelligent and adaptable robots.</p>
+<hr>
+<p><strong>Author</strong>: Zakia Baig
+<strong>Estimated Reading Time</strong>: 11 minutes</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/chapter-06/index.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages navigation"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/chapter-05/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Chapter 5 - Isaac Robotics Platform</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/chapter-07/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Chapter 7 - Locomotion and Movement Control</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#author-zakia-baig" class="table-of-contents__link toc-highlight">Author: Zakia Baig</a><ul><li><a href="#introduction-to-vla-models" class="table-of-contents__link toc-highlight">Introduction to VLA Models</a></li><li><a href="#architecture-of-vla-models" class="table-of-contents__link toc-highlight">Architecture of VLA Models</a></li><li><a href="#key-vla-models" class="table-of-contents__link toc-highlight">Key VLA Models</a></li><li><a href="#training-vla-models" class="table-of-contents__link toc-highlight">Training VLA Models</a></li><li><a href="#applications-in-humanoid-robotics" class="table-of-contents__link toc-highlight">Applications in Humanoid Robotics</a></li><li><a href="#technical-implementation" class="table-of-contents__link toc-highlight">Technical Implementation</a></li><li><a href="#challenges-and-limitations" class="table-of-contents__link toc-highlight">Challenges and Limitations</a></li><li><a href="#comparison-with-traditional-approaches" class="table-of-contents__link toc-highlight">Comparison with Traditional Approaches</a></li><li><a href="#future-directions" class="table-of-contents__link toc-highlight">Future Directions</a></li></ul></li><li><a href="#chapter-summary" class="table-of-contents__link toc-highlight">Chapter Summary</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Chapters</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Introduction</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://twitter.com/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Humanoid Robotics Book. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

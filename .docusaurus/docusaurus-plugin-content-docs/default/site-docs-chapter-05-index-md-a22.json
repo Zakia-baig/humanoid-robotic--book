@@ -1,0 +1,29 @@
+{
+  "id": "chapter-05/index",
+  "title": "Chapter 5 - Isaac Robotics Platform",
+  "description": "Exploring NVIDIA Isaac robotics platform and its applications in humanoid robotics",
+  "source": "@site/docs/chapter-05/index.md",
+  "sourceDirName": "chapter-05",
+  "slug": "/chapter-05/",
+  "permalink": "/docs/chapter-05/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/chapter-05/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "title": "Chapter 5 - Isaac Robotics Platform",
+    "sidebar_position": 5,
+    "description": "Exploring NVIDIA Isaac robotics platform and its applications in humanoid robotics"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Chapter 4 - Gazebo Simulation Environment",
+    "permalink": "/docs/chapter-04/"
+  },
+  "next": {
+    "title": "Chapter 6 - Vision Language Action (VLA) Models",
+    "permalink": "/docs/chapter-06/"
+  }
+}

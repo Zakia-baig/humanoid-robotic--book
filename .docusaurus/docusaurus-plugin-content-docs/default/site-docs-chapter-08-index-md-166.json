@@ -1,0 +1,29 @@
+{
+  "id": "chapter-08/index",
+  "title": "Chapter 8 - Perception Systems",
+  "description": "Understanding perception systems in humanoid robotics for environment understanding and interaction",
+  "source": "@site/docs/chapter-08/index.md",
+  "sourceDirName": "chapter-08",
+  "slug": "/chapter-08/",
+  "permalink": "/docs/chapter-08/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/chapter-08/index.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "title": "Chapter 8 - Perception Systems",
+    "sidebar_position": 8,
+    "description": "Understanding perception systems in humanoid robotics for environment understanding and interaction"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Chapter 7 - Locomotion and Movement Control",
+    "permalink": "/docs/chapter-07/"
+  },
+  "next": {
+    "title": "Chapter 9 - Manipulation and Grasping",
+    "permalink": "/docs/chapter-09/"
+  }
+}

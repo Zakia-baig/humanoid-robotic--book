@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-chapter-11/index" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Chapter 11 - Control Systems and Planning | Humanoid Robotics Book</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://your-docusaurus-site.example.com/docs/chapter-11/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="ur"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Chapter 11 - Control Systems and Planning | Humanoid Robotics Book"><meta data-rh="true" name="description" content="Understanding control systems and planning algorithms in humanoid robotics for coordinated motion and behavior"><meta data-rh="true" property="og:description" content="Understanding control systems and planning algorithms in humanoid robotics for coordinated motion and behavior"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://your-docusaurus-site.example.com/docs/chapter-11/"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/chapter-11/" hreflang="en"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/ur/docs/chapter-11/" hreflang="ur"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/chapter-11/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Chapter 11 - Control Systems and Planning","item":"https://your-docusaurus-site.example.com/docs/chapter-11/"}]}</script><link rel="stylesheet" href="/assets/css/styles.a3538064.css">
+<script src="/assets/js/runtime~main.e172c94d.js" defer="defer"></script>
+<script src="/assets/js/main.7d040862.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Robotics Book Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="Robotics Book Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Humanoid Robotics Book</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/intro">Chapters</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>English</a><ul class="dropdown__menu"><li><a href="/docs/chapter-11/" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="en">English</a></li><li><a href="/ur/docs/chapter-11/" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="ur">اردو</a></li></ul></div><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/intro"><span title="Humanoid Robotics Book" class="categoryLinkLabel_W154">Humanoid Robotics Book</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/intro"><span title="Introduction" class="linkLabel_WmDU">Introduction</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-01/"><span title="Chapter 1 - Introduction to Humanoid Robotics" class="categoryLinkLabel_W154">Chapter 1 - Introduction to Humanoid Robotics</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-02/"><span title="Chapter 2 - Physical AI Fundamentals" class="categoryLinkLabel_W154">Chapter 2 - Physical AI Fundamentals</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-03/"><span title="Chapter 3 - ROS2 for Humanoid Robots" class="categoryLinkLabel_W154">Chapter 3 - ROS2 for Humanoid Robots</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-04/"><span title="Chapter 4 - Gazebo Simulation Environment" class="categoryLinkLabel_W154">Chapter 4 - Gazebo Simulation Environment</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-05/"><span title="Chapter 5 - Isaac Robotics Platform" class="categoryLinkLabel_W154">Chapter 5 - Isaac Robotics Platform</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-06/"><span title="Chapter 6 - Vision Language Action (VLA) Models" class="categoryLinkLabel_W154">Chapter 6 - Vision Language Action (VLA) Models</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-07/"><span title="Chapter 7 - Locomotion and Movement Control" class="categoryLinkLabel_W154">Chapter 7 - Locomotion and Movement Control</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-08/"><span title="Chapter 8 - Perception Systems" class="categoryLinkLabel_W154">Chapter 8 - Perception Systems</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-09/"><span title="Chapter 9 - Manipulation and Grasping" class="categoryLinkLabel_W154">Chapter 9 - Manipulation and Grasping</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-10/"><span title="Chapter 10 - Human-Robot Interaction" class="categoryLinkLabel_W154">Chapter 10 - Human-Robot Interaction</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/docs/chapter-11/"><span title="Chapter 11 - Control Systems and Planning" class="categoryLinkLabel_W154">Chapter 11 - Control Systems and Planning</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/chapter-11/"><span title="Chapter 11 - Control Systems and Planning" class="linkLabel_WmDU">Chapter 11 - Control Systems and Planning</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-12/"><span title="Chapter 12 - AI and Learning in Humanoid Robots" class="categoryLinkLabel_W154">Chapter 12 - AI and Learning in Humanoid Robots</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/chapter-13/"><span title="Chapter 13 - Future Directions and Applications" class="categoryLinkLabel_W154">Chapter 13 - Future Directions and Applications</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/contributing/content-management"><span title="Contributing" class="categoryLinkLabel_W154">Contributing</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/quickstart"><span title="Quick Start Guide" class="linkLabel_WmDU">Quick Start Guide</span></a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><span class="breadcrumbs__link">Humanoid Robotics Book</span></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Chapter 11 - Control Systems and Planning</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Chapter 11 - Control Systems and Planning</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Chapter 11: Control Systems and Planning</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="author-zakia-baig">Author: Zakia Baig<a href="#author-zakia-baig" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h2>
+<p>Control systems and planning algorithms form the central nervous system of humanoid robots, coordinating complex multi-degree-of-freedom systems to achieve desired behaviors. These systems manage everything from maintaining balance during walking to executing precise manipulation tasks. Understanding these systems is crucial for developing responsive, stable, and efficient humanoid robots.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fundamentals-of-robot-control">Fundamentals of Robot Control<a href="#fundamentals-of-robot-control" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<p>Robot control systems manage the relationship between desired robot behavior and actual robot actions. For humanoid robots, this involves coordinating dozens of joints across multiple limbs while maintaining stability and achieving task objectives.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="control-system-architecture">Control System Architecture<a href="#control-system-architecture" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Typical hierarchical control structure:</p>
+<ul>
+<li class=""><strong>High-Level Planner</strong>: Global task and motion planning</li>
+<li class=""><strong>Mid-Level Controller</strong>: Trajectory generation and coordination</li>
+<li class=""><strong>Low-Level Controller</strong>: Joint-level control and feedback</li>
+<li class=""><strong>Sensor Integration</strong>: Processing feedback for closed-loop control</li>
+<li class=""><strong>Safety Systems</strong>: Emergency stops and protective functions</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="control-theory-basics">Control Theory Basics<a href="#control-theory-basics" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Fundamental control concepts:</p>
+<ul>
+<li class=""><strong>Open-Loop Control</strong>: Control without feedback</li>
+<li class=""><strong>Closed-Loop Control</strong>: Control using feedback</li>
+<li class=""><strong>Feedforward Control</strong>: Predictive control based on model</li>
+<li class=""><strong>Feedback Control</strong>: Corrective control based on error</li>
+<li class=""><strong>Adaptive Control</strong>: Adjusting parameters based on performance</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="system-modeling">System Modeling<a href="#system-modeling" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Mathematical representation of robot dynamics:</p>
+<ul>
+<li class=""><strong>Forward Dynamics</strong>: Computing motion from forces</li>
+<li class=""><strong>Inverse Dynamics</strong>: Computing forces from motion</li>
+<li class=""><strong>Kinematic Models</strong>: Geometric relationships</li>
+<li class=""><strong>Dynamic Models</strong>: Force-motion relationships</li>
+<li class=""><strong>Parameter Identification</strong>: Estimating model parameters</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="motion-planning">Motion Planning<a href="#motion-planning" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="configuration-space-planning">Configuration Space Planning<a href="#configuration-space-planning" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Representing robot states in mathematical space:</p>
+<ul>
+<li class=""><strong>C-Space Representation</strong>: Joint angle space representation</li>
+<li class=""><strong>Obstacle Representation</strong>: Modeling obstacles in C-space</li>
+<li class=""><strong>Path Planning Algorithms</strong>: A*, RRT, PRM for pathfinding</li>
+<li class=""><strong>Smoothing Techniques</strong>: Optimizing planned paths</li>
+<li class=""><strong>Dynamic Planning</strong>: Planning in changing environments</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="task-space-planning">Task-Space Planning<a href="#task-space-planning" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Planning in the space where tasks are defined:</p>
+<ul>
+<li class=""><strong>Cartesian Space</strong>: Position and orientation planning</li>
+<li class=""><strong>Operational Space</strong>: Task-relevant coordinate systems</li>
+<li class=""><strong>Inverse Kinematics</strong>: Converting task-space to joint-space</li>
+<li class=""><strong>Redundancy Resolution</strong>: Managing extra degrees of freedom</li>
+<li class=""><strong>Optimization Criteria</strong>: Selecting optimal solutions</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="multi-modal-planning">Multi-Modal Planning<a href="#multi-modal-planning" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Coordinating different types of motion:</p>
+<ul>
+<li class=""><strong>Locomotion Planning</strong>: Walking and navigation planning</li>
+<li class=""><strong>Manipulation Planning</strong>: Arm and hand motion planning</li>
+<li class=""><strong>Whole-Body Planning</strong>: Coordinating all robot degrees of freedom</li>
+<li class=""><strong>Contact Planning</strong>: Planning contact with environment</li>
+<li class=""><strong>Multi-Task Planning</strong>: Balancing competing objectives</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="balance-and-stability-control">Balance and Stability Control<a href="#balance-and-stability-control" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="zero-moment-point-zmp-control">Zero Moment Point (ZMP) Control<a href="#zero-moment-point-zmp-control" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Classic approach to bipedal stability:</p>
+<ul>
+<li class=""><strong>ZMP Calculation</strong>: Computing moment-free point</li>
+<li class=""><strong>Stability Criteria</strong>: Maintaining ZMP in support polygon</li>
+<li class=""><strong>Preview Control</strong>: Using future reference trajectories</li>
+<li class=""><strong>Force Distribution</strong>: Optimizing ground contact forces</li>
+<li class=""><strong>Stability Margins</strong>: Maintaining safety margins</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="linear-inverted-pendulum-lip-model">Linear Inverted Pendulum (LIP) Model<a href="#linear-inverted-pendulum-lip-model" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Simplified balance model:</p>
+<ul>
+<li class=""><strong>LIP Dynamics</strong>: Simplified balance equations</li>
+<li class=""><strong>Capture Point</strong>: Point where robot can stop</li>
+<li class=""><strong>Divergent Component</strong>: Unstable dynamics component</li>
+<li class=""><strong>Convergent Component</strong>: Stable dynamics component</li>
+<li class=""><strong>Balance Control</strong>: Maintaining convergence</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="whole-body-control">Whole-Body Control<a href="#whole-body-control" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Advanced balance control approaches:</p>
+<ul>
+<li class=""><strong>Momentum Control</strong>: Managing linear and angular momentum</li>
+<li class=""><strong>Hierarchical Optimization</strong>: Prioritizing control objectives</li>
+<li class=""><strong>Contact Consistency</strong>: Ensuring physical contact constraints</li>
+<li class=""><strong>Force Optimization</strong>: Optimizing contact forces</li>
+<li class=""><strong>Real-Time Optimization</strong>: Solving optimization online</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="joint-level-control">Joint-Level Control<a href="#joint-level-control" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="pid-control">PID Control<a href="#pid-control" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Proportional-Integral-Derivative control:</p>
+<ul>
+<li class=""><strong>Proportional Control</strong>: Correcting based on error</li>
+<li class=""><strong>Integral Control</strong>: Eliminating steady-state error</li>
+<li class=""><strong>Derivative Control</strong>: Damping oscillations</li>
+<li class=""><strong>Tuning Methods</strong>: Adjusting PID parameters</li>
+<li class=""><strong>Anti-Windup</strong>: Preventing integral windup</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="impedance-control">Impedance Control<a href="#impedance-control" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Controlling robot&#x27;s mechanical impedance:</p>
+<ul>
+<li class=""><strong>Stiffness Control</strong>: Adjusting resistance to displacement</li>
+<li class=""><strong>Damping Control</strong>: Adjusting resistance to velocity</li>
+<li class=""><strong>Inertia Control</strong>: Adjusting resistance to acceleration</li>
+<li class=""><strong>Variable Impedance</strong>: Adjusting parameters based on task</li>
+<li class=""><strong>Stability Analysis</strong>: Ensuring stable impedance control</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="force-control">Force Control<a href="#force-control" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Controlling forces at contact points:</p>
+<ul>
+<li class=""><strong>Hybrid Force-Motion Control</strong>: Combining force and position control</li>
+<li class=""><strong>Admittance Control</strong>: Controlling motion in response to forces</li>
+<li class=""><strong>Impedance Control</strong>: Controlling apparent mechanical properties</li>
+<li class=""><strong>Force Estimation</strong>: Estimating forces from motor currents</li>
+<li class=""><strong>Compliance Control</strong>: Achieving desired compliance</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="advanced-control-techniques">Advanced Control Techniques<a href="#advanced-control-techniques" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="model-predictive-control-mpc">Model Predictive Control (MPC)<a href="#model-predictive-control-mpc" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Predictive control for complex systems:</p>
+<ul>
+<li class=""><strong>Prediction Model</strong>: Forecasting system behavior</li>
+<li class=""><strong>Optimization Problem</strong>: Minimizing predicted cost</li>
+<li class=""><strong>Constraint Handling</strong>: Managing physical and operational limits</li>
+<li class=""><strong>Rolling Horizon</strong>: Replanning at each time step</li>
+<li class=""><strong>Real-Time Optimization</strong>: Solving MPC online</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="optimal-control">Optimal Control<a href="#optimal-control" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Mathematically optimal control strategies:</p>
+<ul>
+<li class=""><strong>Calculus of Variations</strong>: Finding optimal trajectories</li>
+<li class=""><strong>Pontryagin&#x27;s Principle</strong>: Necessary conditions for optimality</li>
+<li class=""><strong>Hamilton-Jacobi-Bellman</strong>: Sufficient conditions for optimality</li>
+<li class=""><strong>Linear Quadratic Regulator</strong>: Optimal control for linear systems</li>
+<li class=""><strong>Nonlinear Optimal Control</strong>: Extensions to nonlinear systems</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="robust-control">Robust Control<a href="#robust-control" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Control in presence of uncertainty:</p>
+<ul>
+<li class=""><strong>H-infinity Control</strong>: Minimizing worst-case performance</li>
+<li class=""><strong>Mu-Synthesis</strong>: Robust control with structured uncertainty</li>
+<li class=""><strong>Gain Scheduling</strong>: Adjusting parameters based on conditions</li>
+<li class=""><strong>Adaptive Control</strong>: Adjusting parameters based on performance</li>
+<li class=""><strong>Sliding Mode Control</strong>: Robust control with discontinuous feedback</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="learning-based-control">Learning-Based Control<a href="#learning-based-control" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="reinforcement-learning">Reinforcement Learning<a href="#reinforcement-learning" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Learning control policies through interaction:</p>
+<ul>
+<li class=""><strong>Policy Gradient</strong>: Direct policy optimization</li>
+<li class=""><strong>Actor-Critic</strong>: Value-based policy improvement</li>
+<li class=""><strong>Deep Reinforcement Learning</strong>: Using neural networks</li>
+<li class=""><strong>Continuous Control</strong>: Handling continuous action spaces</li>
+<li class=""><strong>Sample Efficiency</strong>: Learning with minimal samples</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="imitation-learning">Imitation Learning<a href="#imitation-learning" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Learning from demonstrations:</p>
+<ul>
+<li class=""><strong>Behavior Cloning</strong>: Direct mapping from observations to actions</li>
+<li class=""><strong>Inverse Reinforcement Learning</strong>: Learning reward functions</li>
+<li class=""><strong>Generative Adversarial Imitation Learning</strong>: Adversarial learning</li>
+<li class=""><strong>Multi-Modal Learning</strong>: Learning from multiple demonstrations</li>
+<li class=""><strong>Transfer Learning</strong>: Applying learned skills to new robots</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="model-learning">Model Learning<a href="#model-learning" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Learning system dynamics:</p>
+<ul>
+<li class=""><strong>System Identification</strong>: Learning dynamical models</li>
+<li class=""><strong>Neural Network Models</strong>: Learning complex dynamics</li>
+<li class=""><strong>Gaussian Processes</strong>: Learning with uncertainty quantification</li>
+<li class=""><strong>Physics-Informed Learning</strong>: Incorporating physical laws</li>
+<li class=""><strong>Online Model Adaptation</strong>: Updating models during operation</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="multi-robot-coordination">Multi-Robot Coordination<a href="#multi-robot-coordination" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="distributed-control">Distributed Control<a href="#distributed-control" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Coordinating multiple robots:</p>
+<ul>
+<li class=""><strong>Consensus Algorithms</strong>: Reaching agreement among robots</li>
+<li class=""><strong>Formation Control</strong>: Maintaining geometric formations</li>
+<li class=""><strong>Task Allocation</strong>: Distributing tasks among robots</li>
+<li class=""><strong>Communication Protocols</strong>: Exchanging information</li>
+<li class=""><strong>Decentralized Control</strong>: Local decision making</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="cooperative-manipulation">Cooperative Manipulation<a href="#cooperative-manipulation" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Multiple robots manipulating objects:</p>
+<ul>
+<li class=""><strong>Load Distribution</strong>: Sharing manipulation forces</li>
+<li class=""><strong>Motion Coordination</strong>: Coordinating robot movements</li>
+<li class=""><strong>Grasp Planning</strong>: Coordinating multi-robot grasps</li>
+<li class=""><strong>Force Control</strong>: Coordinating contact forces</li>
+<li class=""><strong>Collision Avoidance</strong>: Preventing robot collisions</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="swarm-control">Swarm Control<a href="#swarm-control" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Controlling large groups of robots:</p>
+<ul>
+<li class=""><strong>Emergent Behavior</strong>: Complex behavior from simple rules</li>
+<li class=""><strong>Bio-Inspired Control</strong>: Nature-based control strategies</li>
+<li class=""><strong>Scalable Algorithms</strong>: Algorithms that scale with group size</li>
+<li class=""><strong>Leader-Follower</strong>: Hierarchical control structures</li>
+<li class=""><strong>Flocking Behavior</strong>: Self-organizing group behavior</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="real-time-implementation">Real-Time Implementation<a href="#real-time-implementation" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="control-frequency-requirements">Control Frequency Requirements<a href="#control-frequency-requirements" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Meeting timing constraints:</p>
+<ul>
+<li class=""><strong>High-Frequency Control</strong>: 1-10kHz for joint control</li>
+<li class=""><strong>Mid-Frequency Control</strong>: 10-100Hz for motion planning</li>
+<li class=""><strong>Low-Frequency Control</strong>: 1-10Hz for high-level planning</li>
+<li class=""><strong>Jitter Requirements</strong>: Consistent timing performance</li>
+<li class=""><strong>Deadline Misses</strong>: Handling missed deadlines gracefully</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="computational-efficiency">Computational Efficiency<a href="#computational-efficiency" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Optimizing control algorithms:</p>
+<ul>
+<li class=""><strong>Model Simplification</strong>: Approximate models for faster computation</li>
+<li class=""><strong>Precomputation</strong>: Computing solutions offline</li>
+<li class=""><strong>Caching</strong>: Storing and reusing computed solutions</li>
+<li class=""><strong>Parallel Processing</strong>: Using multiple processors</li>
+<li class=""><strong>Approximation Algorithms</strong>: Trading accuracy for speed</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="hardware-considerations">Hardware Considerations<a href="#hardware-considerations" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Leveraging hardware capabilities:</p>
+<ul>
+<li class=""><strong>Real-Time Operating Systems</strong>: Ensuring timing guarantees</li>
+<li class=""><strong>Dedicated Processors</strong>: Specialized hardware for control</li>
+<li class=""><strong>FPGA Implementation</strong>: Hardware-accelerated control</li>
+<li class=""><strong>GPU Acceleration</strong>: Parallel processing for complex algorithms</li>
+<li class=""><strong>Embedded Systems</strong>: Power-efficient real-time processing</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="safety-and-fault-tolerance">Safety and Fault Tolerance<a href="#safety-and-fault-tolerance" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="safety-systems">Safety Systems<a href="#safety-systems" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Ensuring safe operation:</p>
+<ul>
+<li class=""><strong>Emergency Stops</strong>: Rapid shutdown capabilities</li>
+<li class=""><strong>Safety Monitors</strong>: Continuous safety checks</li>
+<li class=""><strong>Safe States</strong>: Defined safe configurations</li>
+<li class=""><strong>Collision Avoidance</strong>: Preventing harmful contacts</li>
+<li class=""><strong>Force Limiting</strong>: Restricting dangerous forces</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="fault-detection-and-isolation">Fault Detection and Isolation<a href="#fault-detection-and-isolation" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Identifying system failures:</p>
+<ul>
+<li class=""><strong>Parity Space</strong>: Model-based fault detection</li>
+<li class=""><strong>Observer-Based</strong>: State estimation for fault detection</li>
+<li class=""><strong>Statistical Methods</strong>: Statistical anomaly detection</li>
+<li class=""><strong>Machine Learning</strong>: Learning-based fault detection</li>
+<li class=""><strong>Hardware Redundancy</strong>: Multiple sensors for fault detection</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="fault-tolerant-control">Fault Tolerant Control<a href="#fault-tolerant-control" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Maintaining operation despite failures:</p>
+<ul>
+<li class=""><strong>Graceful Degradation</strong>: Reduced performance with failures</li>
+<li class=""><strong>Reconfiguration</strong>: Adapting to failed components</li>
+<li class=""><strong>Backup Controllers</strong>: Alternative control strategies</li>
+<li class=""><strong>Learning from Failures</strong>: Improving through experience</li>
+<li class=""><strong>Recovery Strategies</strong>: Returning to normal operation</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="integration-with-perception-systems">Integration with Perception Systems<a href="#integration-with-perception-systems" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="state-estimation">State Estimation<a href="#state-estimation" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Combining sensor information:</p>
+<ul>
+<li class=""><strong>Kalman Filtering</strong>: Optimal state estimation for linear systems</li>
+<li class=""><strong>Extended Kalman Filter</strong>: Nonlinear state estimation</li>
+<li class=""><strong>Unscented Kalman Filter</strong>: Better nonlinear approximation</li>
+<li class=""><strong>Particle Filtering</strong>: Non-Gaussian state estimation</li>
+<li class=""><strong>Sensor Fusion</strong>: Combining multiple sensor types</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="feedback-integration">Feedback Integration<a href="#feedback-integration" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Using perception for control:</p>
+<ul>
+<li class=""><strong>Visual Servoing</strong>: Vision-based feedback control</li>
+<li class=""><strong>Force Feedback</strong>: Using force sensors for control</li>
+<li class=""><strong>Tactile Feedback</strong>: Using touch sensors for control</li>
+<li class=""><strong>Multi-Modal Feedback</strong>: Combining different feedback types</li>
+<li class=""><strong>Predictive Feedback</strong>: Using predictive models</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="uncertainty-management">Uncertainty Management<a href="#uncertainty-management" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Handling sensor uncertainty:</p>
+<ul>
+<li class=""><strong>Robust Control</strong>: Control with uncertain models</li>
+<li class=""><strong>Stochastic Control</strong>: Control with probabilistic models</li>
+<li class=""><strong>Bayesian Control</strong>: Control with belief state</li>
+<li class=""><strong>Risk-Aware Control</strong>: Accounting for risk in decisions</li>
+<li class=""><strong>Chance-Constrained Control</strong>: Probabilistic constraint satisfaction</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance-evaluation">Performance Evaluation<a href="#performance-evaluation" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="stability-metrics">Stability Metrics<a href="#stability-metrics" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Measuring control system stability:</p>
+<ul>
+<li class=""><strong>Lyapunov Exponents</strong>: Measuring system stability</li>
+<li class=""><strong>Phase Margin</strong>: Frequency domain stability measure</li>
+<li class=""><strong>Gain Margin</strong>: Frequency domain robustness measure</li>
+<li class=""><strong>Region of Attraction</strong>: Basin of stable operation</li>
+<li class=""><strong>Convergence Rate</strong>: Speed of stability recovery</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance-metrics">Performance Metrics<a href="#performance-metrics" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Measuring control system performance:</p>
+<ul>
+<li class=""><strong>Tracking Error</strong>: Deviation from desired trajectory</li>
+<li class=""><strong>Settling Time</strong>: Time to reach steady state</li>
+<li class=""><strong>Overshoot</strong>: Exceeding desired value temporarily</li>
+<li class=""><strong>Rise Time</strong>: Time to reach target value</li>
+<li class=""><strong>Steady-State Error</strong>: Persistent error in steady state</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="robustness-metrics">Robustness Metrics<a href="#robustness-metrics" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Measuring system robustness:</p>
+<ul>
+<li class=""><strong>Sensitivity Analysis</strong>: Response to parameter changes</li>
+<li class=""><strong>Disturbance Rejection</strong>: Ability to reject disturbances</li>
+<li class=""><strong>Model Uncertainty</strong>: Performance with model errors</li>
+<li class=""><strong>Noise Robustness</strong>: Performance with sensor noise</li>
+<li class=""><strong>Parameter Variations</strong>: Performance with changing parameters</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="emerging-trends">Emerging Trends<a href="#emerging-trends" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="neuromorphic-control">Neuromorphic Control<a href="#neuromorphic-control" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Brain-inspired control systems:</p>
+<ul>
+<li class=""><strong>Spiking Neural Networks</strong>: Event-based neural processing</li>
+<li class=""><strong>Synaptic Plasticity</strong>: Learning through neural connections</li>
+<li class=""><strong>Neuromorphic Hardware</strong>: Specialized neural processing chips</li>
+<li class=""><strong>Biological Inspiration</strong>: Mimicking biological control systems</li>
+<li class=""><strong>Ultra-Low Power</strong>: Dramatically reduced energy consumption</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="quantum-control">Quantum Control<a href="#quantum-control" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Quantum-enhanced control systems:</p>
+<ul>
+<li class=""><strong>Quantum Sensing</strong>: Ultra-precise sensing capabilities</li>
+<li class=""><strong>Quantum Feedback</strong>: Quantum-enhanced feedback control</li>
+<li class=""><strong>Quantum Optimization</strong>: Quantum algorithms for control</li>
+<li class=""><strong>Quantum Communication</strong>: Secure quantum communication</li>
+<li class=""><strong>Quantum Advantage</strong>: Exponential speedups for certain problems</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="edge-intelligence">Edge Intelligence<a href="#edge-intelligence" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h4>
+<p>Distributed control intelligence:</p>
+<ul>
+<li class=""><strong>Federated Learning</strong>: Collaborative learning without data sharing</li>
+<li class=""><strong>Edge Computing</strong>: Processing at the control location</li>
+<li class=""><strong>5G Integration</strong>: High-speed communication for distributed control</li>
+<li class=""><strong>Cloud-Edge Collaboration</strong>: Optimizing computation distribution</li>
+<li class=""><strong>Real-Time Learning</strong>: Learning while controlling</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="chapter-summary">Chapter Summary<a href="#chapter-summary" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h2>
+<p>Control systems and planning algorithms are fundamental to humanoid robotics, enabling robots to move and behave in stable, efficient, and purposeful ways. These systems must coordinate complex multi-degree-of-freedom systems while maintaining stability and achieving task objectives. Understanding these concepts is essential for developing responsive, stable, and efficient humanoid robots that can operate effectively in real-world environments.</p>
+<hr>
+<p><strong>Author</strong>: Zakia Baig
+<strong>Estimated Reading Time</strong>: 10 minutes</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/chapter-11/index.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages navigation"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/chapter-10/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Chapter 10 - Human-Robot Interaction</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/chapter-12/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Chapter 12 - AI and Learning in Humanoid Robots</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#author-zakia-baig" class="table-of-contents__link toc-highlight">Author: Zakia Baig</a><ul><li><a href="#fundamentals-of-robot-control" class="table-of-contents__link toc-highlight">Fundamentals of Robot Control</a></li><li><a href="#motion-planning" class="table-of-contents__link toc-highlight">Motion Planning</a></li><li><a href="#balance-and-stability-control" class="table-of-contents__link toc-highlight">Balance and Stability Control</a></li><li><a href="#joint-level-control" class="table-of-contents__link toc-highlight">Joint-Level Control</a></li><li><a href="#advanced-control-techniques" class="table-of-contents__link toc-highlight">Advanced Control Techniques</a></li><li><a href="#learning-based-control" class="table-of-contents__link toc-highlight">Learning-Based Control</a></li><li><a href="#multi-robot-coordination" class="table-of-contents__link toc-highlight">Multi-Robot Coordination</a></li><li><a href="#real-time-implementation" class="table-of-contents__link toc-highlight">Real-Time Implementation</a></li><li><a href="#safety-and-fault-tolerance" class="table-of-contents__link toc-highlight">Safety and Fault Tolerance</a></li><li><a href="#integration-with-perception-systems" class="table-of-contents__link toc-highlight">Integration with Perception Systems</a></li><li><a href="#performance-evaluation" class="table-of-contents__link toc-highlight">Performance Evaluation</a></li><li><a href="#emerging-trends" class="table-of-contents__link toc-highlight">Emerging Trends</a></li></ul></li><li><a href="#chapter-summary" class="table-of-contents__link toc-highlight">Chapter Summary</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Chapters</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Introduction</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://twitter.com/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Humanoid Robotics Book. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

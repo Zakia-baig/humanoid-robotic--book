@@ -1,0 +1,167 @@
+/**
+ * Auth Component Styles
+ */
+
+.signupForm {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: var(--ifm-global-radius);
+  box-shadow: var(--ifm-global-shadow-lw);
+}
+
+.formTitle {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.75rem;
+  font-weight: var(--ifm-font-weight-bold);
+  color: var(--ifm-heading-color);
+  text-align: center;
+}
+
+.formSubtitle {
+  margin: 0 0 2rem 0;
+  font-size: 1rem;
+  color: var(--ifm-color-emphasis-700);
+  text-align: center;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: var(--ifm-font-weight-semibold);
+  color: var(--ifm-color-emphasis-800);
+  font-size: 0.9rem;
+}
+
+.input, .select, .textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  background-color: var(--ifm-background-surface-color);
+  font-size: 1rem;
+  transition: border-color var(--ifm-transition-fast) ease;
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(var(--ifm-color-primary-rgb), 0.1);
+}
+
+.inputError {
+  border-color: var(--ifm-color-danger);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.checkboxGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: var(--ifm-global-radius);
+  transition: background-color var(--ifm-transition-fast) ease;
+}
+
+.checkboxLabel:hover {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.checkbox {
+  margin-top: 0.25rem;
+  margin-right: 0.5rem;
+}
+
+.checkboxText {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.4;
+}
+
+.errorText {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--ifm-color-danger);
+}
+
+.errorBanner {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background-color: rgba(var(--ifm-color-danger-rgb), 0.1);
+  border: 1px solid var(--ifm-color-danger);
+  border-radius: var(--ifm-global-radius);
+  color: var(--ifm-color-danger);
+  text-align: center;
+}
+
+.sectionDivider {
+  margin: 2rem 0 1.5rem 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.sectionTitle {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.25rem;
+  font-weight: var(--ifm-font-weight-bold);
+  color: var(--ifm-heading-color);
+}
+
+.sectionSubtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.submitButton {
+  flex: 1;
+  min-width: 120px;
+}
+
+.cancelButton {
+  min-width: 100px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .signupForm {
+    margin: 0 1rem;
+    padding: 1.5rem;
+  }
+
+  .formTitle {
+    font-size: 1.5rem;
+  }
+
+  .checkboxGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+  }
+}

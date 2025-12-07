@@ -1,0 +1,29 @@
+{
+  "id": "contributing/content-management",
+  "title": "Content Management Guide",
+  "description": "How to contribute, manage, and maintain content in the Humanoid Robotics Book",
+  "source": "@site/docs/contributing/content-management.md",
+  "sourceDirName": "contributing",
+  "slug": "/contributing/content-management",
+  "permalink": "/docs/contributing/content-management",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/contributing/content-management.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 99,
+  "frontMatter": {
+    "title": "Content Management Guide",
+    "sidebar_position": 99,
+    "description": "How to contribute, manage, and maintain content in the Humanoid Robotics Book"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Chapter 13 - Future Directions and Applications",
+    "permalink": "/docs/chapter-13/"
+  },
+  "next": {
+    "title": "Content Authoring Guidelines",
+    "permalink": "/docs/contributing/authoring-guidelines"
+  }
+}

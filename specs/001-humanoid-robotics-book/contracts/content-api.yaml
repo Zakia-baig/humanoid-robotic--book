@@ -1,0 +1,340 @@
+openapi: 3.0.0
+info:
+  title: Humanoid Robotics Book - Content API
+  version: 1.0.0
+  description: API for content management, personalization, and translation
+
+paths:
+  /api/content/chapters:
+    get:
+      summary: List all chapters
+      description: Retrieve a list of all book chapters with metadata
+      parameters:
+        - name: language
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [en, ur]
+            default: en
+          description: Language preference for content
+        - name: userId
+          in: query
+          required: false
+          schema:
+            type: string
+          description: User ID for personalized content recommendations
+      responses:
+        '200':
+          description: List of chapters retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  chapters:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Chapter'
+                  recommendations:
+                    type: array
+                    items:
+                      type: string
+                      description: Recommended chapter IDs for the user
+
+  /api/content/chapters/{chapterId}:
+    get:
+      summary: Get specific chapter
+      description: Retrieve a specific chapter by ID with content in requested language
+      parameters:
+        - name: chapterId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Chapter identifier
+        - name: language
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [en, ur]
+            default: en
+          description: Language preference for content
+        - name: userId
+          in: query
+          required: false
+          schema:
+            type: string
+          description: User ID for personalized content
+      responses:
+        '200':
+          description: Chapter content retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  chapter:
+                    $ref: '#/components/schemas/Chapter'
+                  personalizedContent:
+                    $ref: '#/components/schemas/PersonalizedContent'
+        '404':
+          description: Chapter not found
+
+  /api/content/translate:
+    post:
+      summary: Translate content
+      description: Translate content between languages
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - content
+                - sourceLanguage
+                - targetLanguage
+              properties:
+                content:
+                  type: string
+                  description: Content to translate
+                sourceLanguage:
+                  type: string
+                  enum: [en]
+                  description: Source language
+                targetLanguage:
+                  type: string
+                  enum: [ur]
+                  description: Target language
+                contentType:
+                  type: string
+                  enum: [chapter, ui, snippet]
+                  description: Type of content being translated
+      responses:
+        '200':
+          description: Content translated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  translatedContent:
+                    type: string
+                    description: Translated content
+                  accuracy:
+                    type: number
+                    format: float
+                    description: Translation accuracy score
+        '400':
+          description: Invalid translation request
+
+  /api/content/personalize/{chapterId}:
+    get:
+      summary: Get personalized chapter content
+      description: Retrieve personalized version of a chapter based on user profile
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: chapterId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Chapter identifier
+        - name: language
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [en, ur]
+            default: en
+          description: Language preference
+      responses:
+        '200':
+          description: Personalized chapter content retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  chapter:
+                    $ref: '#/components/schemas/Chapter'
+                  personalizedElements:
+                    $ref: '#/components/schemas/PersonalizedContent'
+        '401':
+          description: Unauthorized
+        '404':
+          description: Chapter not found
+
+  /api/content/preferences:
+    get:
+      summary: Get content preferences
+      description: Retrieve user's content preferences and recommendations
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: User preferences retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  preferences:
+                    $ref: '#/components/schemas/UserContentPreferences'
+                  recommendations:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ContentRecommendation'
+    post:
+      summary: Update content preferences
+      description: Update user's content preferences
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserContentPreferences'
+      responses:
+        '200':
+          description: Preferences updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  preferences:
+                    $ref: '#/components/schemas/UserContentPreferences'
+                  message:
+                    type: string
+                    example: "Preferences updated successfully"
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+
+  schemas:
+    Chapter:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique chapter identifier
+        title:
+          type: string
+          description: Chapter title
+        slug:
+          type: string
+          description: URL-friendly identifier
+        content:
+          type: string
+          description: Chapter content in MDX format
+        topicArea:
+          type: string
+          description: Main topic of the chapter
+        difficultyLevel:
+          type: string
+          enum: [basic, intermediate, advanced]
+          description: Content difficulty level
+        estimatedReadingTime:
+          type: integer
+          description: Estimated reading time in minutes
+        language:
+          type: string
+          enum: [en, ur]
+          description: Content language
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    PersonalizedContent:
+      type: object
+      properties:
+        difficultyAdjusted:
+          type: boolean
+          description: Whether content difficulty was adjusted
+        recommendedSections:
+          type: array
+          items:
+            type: string
+            description: Recommended section titles
+        additionalResources:
+          type: array
+          items:
+            $ref: '#/components/schemas/Resource'
+        customNotes:
+          type: string
+          description: Personalized notes for the user
+
+    Resource:
+      type: object
+      properties:
+        title:
+          type: string
+        url:
+          type: string
+          format: uri
+        type:
+          type: string
+          enum: [tutorial, paper, video, example]
+
+    UserContentPreferences:
+      type: object
+      properties:
+        languagePreference:
+          type: string
+          enum: [en, ur]
+        difficultyPreference:
+          type: string
+          enum: [basic, intermediate, advanced]
+        topicPreferences:
+          type: array
+          items:
+            type: string
+        contentFormatPreference:
+          type: string
+          enum: [text, visual, interactive]
+        readingSpeed:
+          type: string
+          enum: [slow, normal, fast]
+
+    ContentRecommendation:
+      type: object
+      properties:
+        chapterId:
+          type: string
+        title:
+          type: string
+        reason:
+          type: string
+          description: Why this content is recommended
+        priority:
+          type: integer
+          description: Priority level (1-5)

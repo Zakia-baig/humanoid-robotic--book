@@ -1,0 +1,29 @@
+{
+  "id": "contributing/authoring-guidelines",
+  "title": "Content Authoring Guidelines",
+  "description": "Comprehensive guidelines for authors contributing to the Humanoid Robotics Book",
+  "source": "@site/docs/contributing/authoring-guidelines.md",
+  "sourceDirName": "contributing",
+  "slug": "/contributing/authoring-guidelines",
+  "permalink": "/docs/contributing/authoring-guidelines",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/contributing/authoring-guidelines.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 100,
+  "frontMatter": {
+    "title": "Content Authoring Guidelines",
+    "sidebar_position": 100,
+    "description": "Comprehensive guidelines for authors contributing to the Humanoid Robotics Book"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Content Management Guide",
+    "permalink": "/docs/contributing/content-management"
+  },
+  "next": {
+    "title": "Quick Start Guide",
+    "permalink": "/docs/quickstart"
+  }
+}

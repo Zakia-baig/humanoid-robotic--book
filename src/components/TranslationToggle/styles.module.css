@@ -1,0 +1,81 @@
+/**
+ * Translation Toggle Component Styles
+ */
+
+.translationToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: var(--ifm-global-radius);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.label {
+  font-weight: var(--ifm-font-weight-semibold);
+  color: var(--ifm-color-emphasis-800);
+  white-space: nowrap;
+}
+
+.languageSelector {
+  display: flex;
+  border-radius: calc(var(--ifm-global-radius) - 1px);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  overflow: hidden;
+}
+
+.languageButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--ifm-button-background-color);
+  border: none;
+  cursor: pointer;
+  transition: all var(--ifm-transition-fast) ease;
+  font-size: 0.875rem;
+  font-weight: var(--ifm-font-weight-semibold);
+  color: var(--ifm-color-emphasis-700);
+  min-width: 80px;
+  justify-content: center;
+}
+
+.languageButton:hover {
+  background-color: var(--ifm-button-background-color-hover);
+}
+
+.languageButton.active {
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-color-white);
+}
+
+.flag {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.languageName {
+  display: none;
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+  .languageName {
+    display: inline;
+  }
+
+  .translationToggle {
+    gap: 1rem;
+  }
+
+  .languageButton {
+    min-width: 100px;
+  }
+}
+
+/* RTL support for Urdu */
+html[dir="rtl"] .translationToggle,
+.translationToggle[dir="rtl"] {
+  flex-direction: row-reverse;
+}
