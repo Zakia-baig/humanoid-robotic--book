@@ -1,53 +1,77 @@
-<!-- SYNC IMPACT REPORT
-Version change: 0.0.0 → 1.0.0
-Modified principles: [PRINCIPLE_1_NAME] → Clear and Accurate Technical Content, [PRINCIPLE_2_NAME] → Docusaurus-First Approach, [PRINCIPLE_3_NAME] → Test-First (NON-NEGOTIABLE), [PRINCIPLE_4_NAME] → Integration Testing, [PRINCIPLE_5_NAME] → Multi-Language Support, [PRINCIPLE_6_NAME] → User Personalization
-Added sections: None
-Removed sections: None
-Templates requiring updates: ✅ .specify/templates/plan-template.md, ✅ .specify/templates/spec-template.md, ✅ .specify/templates/tasks-template.md
-Follow-up TODOs: None
--->
+# Project Constitution: RAG Chatbot Backend
 
-# Humanoid Robotics Book Constitution
+## Overview
+This constitution governs the development of a production-ready Retrieval-Augmented Generation (RAG) chatbot backend built with Python, FastAPI, Qdrant Cloud, Cohere, and Google Gemini.
+
+## Project Details
+- **Project Name**: RAG Chatbot Backend
+- **Primary Language**: Python
+- **Framework**: FastAPI
+- **Package Manager**: uv
+- **Vector Database**: Qdrant Cloud
+- **Embeddings Provider**: Cohere
+- **LLM Provider**: Google Gemini
+- **Repository Location**: robotic-book/backend/
 
 ## Core Principles
 
-### Clear and Accurate Technical Content
-All content must provide precise, technically accurate information about humanoid robotics and physical AI; Documentation must be structured, accessible, and scientifically rigorous; Clear purpose required - no vague or incomplete technical explanations.
+### Principle 1: Secure API Key Management
+- **Rule**: All API keys must be loaded from environment variables; never hard-code API keys in source code.
+- **Rationale**: Prevents accidental exposure of sensitive credentials and enables secure deployment across environments.
 
-### Docusaurus-First Approach
-Every feature starts with proper Docusaurus integration; All documentation must be built with Docusaurus framework; Text in/out protocol: Markdown → HTML output, errors → console; Support both human-readable formats and structured content.
+### Principle 2: Modular Architecture
+- **Rule**: Components must be loosely coupled and highly cohesive, following FastAPI's dependency injection system.
+- **Rationale**: Enables easier testing, maintenance, and scalability of the application.
 
-### Test-First (NON-NEGOTIABLE)
-TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced for all documentation and code changes; Automated testing required for all new features.
+### Principle 3: Production-Ready Error Handling
+- **Rule**: All endpoints must implement proper error handling with appropriate HTTP status codes and meaningful error messages.
+- **Rationale**: Ensures robust operation and provides clear feedback for debugging and monitoring.
 
-### Integration Testing
-Focus areas requiring integration tests: New documentation modules, Content changes affecting multiple sections, Inter-documentation linking, Shared schemas and components, Multi-language translation consistency.
+### Principle 4: Type Safety
+- **Rule**: All functions and API endpoints must use proper type hints following Python typing module conventions.
+- **Rationale**: Reduces runtime errors and improves code maintainability and developer experience.
 
-### Multi-Language Support
-All content must be available in English and Urdu with accurate technical translation; Translation quality must maintain technical accuracy; Clear process required for maintaining translation synchronization.
+### Principle 5: Configuration Management
+- **Rule**: Application configuration must be centralized and configurable through environment variables.
+- **Rationale**: Allows flexible deployment across different environments without code changes.
 
-### User Personalization
-Documentation must support user-specific customization and personalization features; Personalization features must enhance user experience without compromising content integrity; Clear guidelines required for personalization implementation.
+### Principle 6: Observability
+- **Rule**: All critical operations must include logging and metrics collection.
+- **Rationale**: Enables effective monitoring, debugging, and performance optimization in production.
 
-## Additional Constraints
+## Technical Constraints
 
-Technology Stack: Docusaurus 3.9.2, React 19, TypeScript 5.6
-Localization: Urdu and English language support required
-Performance: All pages must load within 3 seconds globally
-Accessibility: WCAG 2.1 AA compliance required for all content
-Personalization: User preference persistence and customization features
+### Mandatory Technologies
+- Python 3.9+ for modern language features and performance
+- FastAPI for high-performance web framework with automatic API documentation
+- uv for fast package management and dependency resolution
+- Qdrant Cloud for managed vector database services
+- Cohere for reliable embedding generation
+- Google Gemini for advanced language model capabilities
 
-## Development Workflow
-
-Code Review Process: All PRs require at least one review before merging
-Quality Gates: All tests must pass, documentation must be updated, performance metrics must not degrade
-Testing Requirements: Unit tests for all new functionality, integration tests for multi-component changes, translation consistency verification
-Documentation Standards: All new features must include user documentation in both English and Urdu
+### Prohibited Practices
+- Hard-coding API keys or sensitive information in source code
+- Direct database connections without connection pooling
+- Unhandled exceptions that could crash the application
+- Blocking synchronous operations in async endpoints
 
 ## Governance
 
-This constitution supersedes all other practices and standards in the project. All changes must comply with these principles. Amendments require documentation in an ADR, team approval, and migration plan if applicable.
+### Ratification Date
+2025-12-15
 
-All PRs/reviews must verify compliance with these principles; Complexity must be justified with clear rationale; Use this constitution for development guidance and decision-making.
+### Last Amended Date
+2025-12-15
 
-**Version**: 1.0.0 | **Ratified**: 2025-12-07 | **Last Amended**: 2025-12-07
+### Constitution Version
+1.0.0
+
+### Amendment Procedure
+Changes to this constitution require:
+1. Discussion and approval by the development team
+2. Pull request with clear justification for the change
+3. Approval from at least one senior team member
+4. Update to this document reflecting the changes
+
+### Compliance Review
+All code submissions must be reviewed for compliance with this constitution before merging.

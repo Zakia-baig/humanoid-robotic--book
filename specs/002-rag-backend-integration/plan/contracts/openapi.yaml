@@ -1,0 +1,175 @@
+openapi: 3.0.3
+info:
+  title: RAG Chatbot Backend API
+  description: API for the RAG (Retrieval-Augmented Generation) chatbot backend that integrates Qdrant Cloud, Cohere, and Google Gemini
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: Development server
+  - url: https://api.rag-chatbot.example.com
+    description: Production server
+
+paths:
+  /health:
+    get:
+      summary: Health check endpoint
+      description: Verify that all services are connected and operational
+      responses:
+        '200':
+          description: System is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum: [healthy]
+                    example: "healthy"
+                  services:
+                    type: object
+                    properties:
+                      qdrant:
+                        type: string
+                        enum: [connected, disconnected]
+                        example: "connected"
+                      cohere:
+                        type: string
+                        enum: [connected, disconnected]
+                        example: "connected"
+                      gemini:
+                        type: string
+                        enum: [connected, disconnected]
+                        example: "connected"
+                required:
+                  - status
+                  - services
+        '503':
+          description: Service unavailable due to external dependency failure
+
+  /chat:
+    post:
+      summary: Chat with the RAG system
+      description: Submit a query and receive a response based on the book content
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                  description: User query about the book content
+                  example: "What are the main components of a humanoid robot?"
+                context_length:
+                  type: integer
+                  description: Number of relevant documents to retrieve (default: 5)
+                  minimum: 1
+                  maximum: 20
+                  default: 5
+              required:
+                - query
+      responses:
+        '200':
+          description: Successful response from the RAG system
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: string
+                    description: Generated response from Google Gemini
+                    example: "Humanoid robots typically consist of several key components including the mechanical structure, actuators, sensors, control systems, and power management..."
+                  sources:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: Document chunk ID
+                        score:
+                          type: number
+                          format: float
+                          description: Similarity score from vector search
+                          minimum: 0
+                          maximum: 1
+                        content_preview:
+                          type: string
+                          description: First 200 characters of the source chunk
+                    description: List of document IDs and scores used to generate the response
+                  tokens_used:
+                    type: integer
+                    description: Number of tokens in the response
+                    example: 150
+                required:
+                  - response
+                  - sources
+                  - tokens_used
+        '400':
+          description: Bad request - invalid query format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /admin/load-content:
+    post:
+      summary: Load content from docs directory
+      description: Parse and index all .md and .mdx files from the docs directory into the vector database
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                force_reload:
+                  type: boolean
+                  description: Whether to reload all content even if already loaded (default: false)
+                  default: false
+      responses:
+        '200':
+          description: Content loaded successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  documents_loaded:
+                    type: integer
+                    description: Number of documents loaded
+                    example: 24
+                  status:
+                    type: string
+                    enum: [completed]
+                    example: "completed"
+                required:
+                  - documents_loaded
+                  - status
+        '500':
+          description: Internal server error during content loading
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        detail:
+          type: string
+          description: Error message describing the issue
+          example: "Failed to connect to external service"
+      required:
+        - detail
